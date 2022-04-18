@@ -1,10 +1,20 @@
 build-lists: true
+presenter-notes: text-scale(1), alignment(left|right|center), Helvetica
 
-# [fit] _Writing Clean Code_
+# [fit] Writing Clean Code
 
-## for Humans
+## _for Humans_
 
 [.footer: _Women Coding The Future - Online, April 2022_]
+
+^ This is a presenter note.
+
+---
+
+## **Gift Egwuenu**
+
+#### @lauragift_
+#### _Developer Advocate, Cloudflare_
 
 ---
 
@@ -33,28 +43,41 @@ Shh... Code Review In Progress!
 ## What's wrong with this code?
 
 [.code-highlight: all]
-[.code-highlight: 2, 2-6]
+[.code-highlight: 2]
+[.code-highlight: 3]
+[.code-highlight: 2-5]
 
 ```js
-// bad code
-$.ajax({
-  url: "/api/getWeather",
-  data: {
-    zipcode: 97201
-  },
-  success: function( data ) {
-    $( "#weather-temp" ).html( "" + data + " degrees" );
-  }
+// sending get request to Shopify Admin API
+const x = await Shopify.Utils.loadCurrentSession(req, res);
+const y = new Shopify.Clients.Rest(x.shop, x.accessToken);
+
+const products = await y.get({
+  path: 'products',
+});
+
+```
+---
+## Better EXAMPLE
+
+[.code-highlight: 2-5]
+
+```js
+// sending get request to Shopify Admin API
+const session = await Shopify.Utils.loadCurrentSession(req, res);
+const client = new Shopify.Clients.Rest(session.shop, session.accessToken);
+
+const products = await client.get({
+  path: 'products',
 });
 ```
+---
+
+### Bad code is code that is _difficult_ to understand and creates _technical debt._
 
 ---
 
-_Bad code is code that is difficult to understand and creates technical debt._
-
----
-
-_No one understands it except the person who wrote it._
+### _No one understands it except the_ person _who wrote it._
 
 ---
 
@@ -64,7 +87,7 @@ What bad code looks like.
 
 ---
 
-## _Later_ = Never[^⭐️]
+## Later = _Never_[^⭐️]
 
 [^⭐️]: Learn more about the [LeBlanc's Law](https://yiming.dev/clipping/2019/03/21/le-blanc's-law-a-k-a-later-equals-never/#:~:text=LeBlanc's%20Law%3A%20%22Later%20equals%20Never,fast%20you%20can%20deliver%20value.).
 
@@ -89,13 +112,13 @@ Messy code in a long term causes a lot of problems!
 
 ---
 
-## What is Clean Code?
+## What is _Clean Code?_
 
 ---
 
-_Clean code is code that is comprehensive and easy to understand._
+### _Clean code is code that is_ comprehensive _and_ easy to understand.
 
-_Code that anyone can read and understand other than the developer who wrote it._
+^ Code that anyone can read and understand other than the developer who wrote it.
 
 ---
 
@@ -116,11 +139,107 @@ Who else is guilty?
 
 ---
 
+## _Use Intentional- Revealing Names_
+
+[.code-highlight: 4-8] 
+
+```js
+// ❌ this is a bad example
+import { Order } from '@shopify/shopify-api/dist/rest-resources/2022-04/index.js';
+
+const x = await Shopify.Utils.loadCurrentSession(request, response);
+
+const y = new Order({session: x });
+y.id = 450789469;
+await y.cancel({});
+
+```
+---
+## _Use Intentional- Revealing Names_
+
+[.code-highlight: 4-8]
+
+```js
+// ✅ this is a good example
+import {Order} from '@shopify/shopify-api/dist/rest-resources/2022-04/index.js';
+
+const test_session = await Shopify.Utils.loadCurrentSession(request, response);
+
+const order = new Order({session: test_session});
+order.id = 450789469;
+await order.cancel({});
+```
+
+---
+## _Use Pronoucable Names_
+
+[.code-highlight: 2-3] 
+
+```js
+// ❌ this is a bad example
+const yyyy = new Date('August 19, 1975 23:15:30');
+const date1 = yyyy.getDate();
+```
+---
+## _Use Pronoucable Names_
+
+[.code-highlight: 2-3] 
+
+```js
+// ✅ this is a good example
+const birthday = new Date('August 19, 1975 23:15:30');
+const date = birthday.getDate();
+```
+---
+
 ## Write Clean _Functions_
 
 ---
+FUNCTIONS SHOULD __DO ONE THING.__ THEY SHOULD __DO IT WELL.__
+THEY SHOULD __DO IT ONLY.__
 
-## Good Code _Comments_
+---
+
+### FUNCTION SHOULD DO JUST ONE THING
+
+[.code-highlight: none] 
+[.code-highlight: 2-6] 
+
+```js
+// ❌ this is a bad example
+function getCustomer(customer) {
+	const customerName = prompt("What is your name?");
+	console.log(`Hello ${customerName}! How are you?`);
+
+  const customerAddress = prompt("What is your address?");
+	console.log(`My address is: ${customerAddress}.`);
+}
+
+return getCustomer();
+
+```
+---
+
+### FUNCTION SHOULD DO JUST ONE THING
+
+[.code-highlight: all] 
+
+```js
+// ✅ this is a good example
+function getCustomerName(customer) {
+	const customerName = prompt("What is your name?");
+	console.log(`Hello ${customerName}! How are you?`);
+}
+
+function getCustomerAddress(customer) {
+  const customerAddress = prompt("What is your address?");
+	console.log(`My address is: ${customerAddress}.`);
+}
+
+```
+
+---
+## Good _Code Comments_
 
 ---
 
@@ -128,11 +247,196 @@ Who else is guilty?
 
 ---
 
+### ❌ BAD COMMENT EXAMPLES
+---
+### _Never Explain what the code is doing_
+
+```js
+// Load the current session to get the `accessToken`.
+const session = await Shopify.Utils.loadCurrentSession(req, res);
+// Create a new client for the specified shop.
+const client = new Shopify.Clients.Rest(session.shop, session.accessToken);
+// Use `client.get` to request the specified Shopify REST API endpoint, in this case `products`.
+const products = await client.get({
+  path: 'products',
+});
+```
+
+---
+### _Remove Commented Code_
+
+```js
+const adminApiClient = new Shopify.Clients.Rest(
+  session.shop,
+  session.accessToken,
+);
+
+// const storefrontTokenResponse = await adminApiClient.post({
+//   path: 'storefront_access_tokens',
+//   type: DataType.JSON,
+//   data: {
+//     storefront_access_token: {
+//       title: 'This is my test access token',
+//     },
+//   },
+// });
+```
+
+---
+
+### _Avoid Journal Comments_
+
+[.code-highlight: 1-4]
+```js
+/**
+ * 2022-04-20: Removed call to GraphQL Endpoint, will do that later (GE)
+ * 2022-04-01: Improved Code Quality (JP)
+ */
+const storefrontAccessToken: string;
+const session = await Shopify.Utils.loadCurrentSession(req, res);
+// StorefrontClient takes in the shop url and the Storefront Access Token for that shop.
+const client = new Shopify.Clients.Storefront(
+  session.shop,
+  storefrontAccessToken,
+);
+});
+```
+
+---
+
+### ✅ Good Comment Examples
+
+---
+### _Legal Comments_
+
+[.code-highlight: 1-7]
+```js
+/*
+  @licstart 
+     Copyright (©) 2017 My[Company]Name
+     Available under the terms of the GNU/LGPL-3.0
+     See LICENSE file for more informations.
+  @licend 
+*/
+const storefrontAccessToken: string;
+const session = await Shopify.Utils.loadCurrentSession(req, res);
+
+const client = new Shopify.Clients.Storefront(
+  session.shop,
+  storefrontAccessToken,
+);
+});
+```
+
+---
+### _JSDOC Comments_
+
+[.code-highlight: 1-6]
+```js
+/**
+ * Storefront POST API.
+ * @constructor
+ * @param {string} req - The request object
+ * @param {string} res - The response object
+ */
+const storefrontAccessToken: string;
+const session = await Shopify.Utils.loadCurrentSession(req, res);
+
+const client = new Shopify.Clients.Storefront(
+  session.shop,
+  storefrontAccessToken,
+);
+});
+```
+---
+
+### _TODO Comments_
+
+[.code-highlight: 1]
+```js
+// TODO: Implement request to GraphQL endpoint
+const storefrontAccessToken: string;
+const session = await Shopify.Utils.loadCurrentSession(req, res);
+
+const client = new Shopify.Clients.Storefront(
+  session.shop,
+  storefrontAccessToken,
+);
+});
+```
+---
+
 ## Formatting _/ Style Guide_
 
 ---
 
+
+![inline](https://res.cloudinary.com/lauragift/image/upload/v1650310958/Screenshot_2022-04-18_at_21.19.28_guz6ky.png)
+
+JS Standard Style, Airbnb Style Guide etc..
+
+---
+
+## _Follow Consistent Style_
+
+[.code-highlight: 2-9] 
+
+```js
+// ❌ this is a bad example
+const DAYS_IN_WEEK = 7;
+const daysInMonth = 30;
+
+function eraseDatabase() {}
+function restore_database() {}
+
+class animal {}
+class Alpaca {}
+```
+
+---
+
+## _Follow Consistent Style_
+
+[.code-highlight: 2-3] 
+[.code-highlight: 5-6] 
+[.code-highlight: 8-9] 
+
+```js
+// ✅ this is a good example
+const DAYS_IN_WEEK = 7;
+const DAYS_IN_MONTH = 30;
+
+function eraseDatabase() {}
+function restoreDatabase() {}
+
+class Animal {}
+class Alpaca {}
+```
+
+---
+
 ## TDD _Principles_
+
+---
+## _LAWS OF TDD_
+
+- Write production code only to pass a failing unit test.
+- Write no more of a unit test than sufficient to fail (compilation failures are failures).
+- Write no more production code than necessary to pass the one failing unit test.
+
+---
+
+Good tests should follow the _FIRST principle:_
+
+F = Fast
+
+i = Independent
+
+R = Repeatable
+
+S = Self Validating
+
+T = Timely
 
 ---
 
@@ -140,7 +444,42 @@ Who else is guilty?
 
 ---
 
-# _Clean Code_ Principles
+### Bad Code:  _Error handling with try, catch expections_
+
+[.code-highlight: 2-6]
+
+```js
+app.post('/webhooks', async (req, res) => {
+  try {
+    await Shopify.Webhooks.Registry.process(req, res);
+  } catch (error) {
+    // ❌ this is not sufficient
+    console.log(error);
+  }
+});
+```
+---
+
+### Good Code: _Error handling with try, catch expections_
+
+[.code-highlight: 6-9]
+
+```js
+app.post('/webhooks', async (req, res) => {
+  try {
+    await Shopify.Webhooks.Registry.process(req, res);
+  } catch (error) {
+    // ✅ this is better
+    console.log(error);
+    notifyUserOfError(error);
+    reportErrortoService(error);
+  }
+});
+```
+
+---
+
+# Clean Code _Principles_
 
 ---
 
@@ -182,23 +521,25 @@ YAGNI PRINCIPLE
 
 ---
 
-## _How You Can Tell Your Code is Clean_
+## _How You Can Tell Your Code is Clean?_
 
-- Can someone else pick this up and understand what you wrote?
-- How easy is it going to be to update or add new features further down the line?
-- How easy is it going to be to maintain this codebase?
+- Can someone else read this and understand what I wrote?
+- How easy is it going to be to add new features further down the line?
 - Do you constantly break existing functionality when making changes?
-- When you have to go back and add/modify a feature, is it difficult?
+
+^ Ask yourself these questions
+
+^The consequence of writing bad code can be seen if you answer mostly no’s to these questions. It means there’s some work to be done to make your code cleaner and easy for anyone to pick up and understand.
+On the other hand, if your responses to these questions were all positive, then you’re doing something right and you should keep it going!
 
 ---
 
-## What to do next?
+# RECAP
 
 ---
-
 ## _Best Practices for Writing Clean Code_
 
-- Use meaningful naming  conventions
+- Use meaningful naming conventions
 - Write clean functions
 - Good code comments
 - Format and use a style guide
@@ -207,9 +548,22 @@ YAGNI PRINCIPLE
 
 ---
 
-## _Remember:_
+## _Clean Code Principles_
 
-### "Always leave the code cleaner than you found it"
+- K.I.S.S
+- D.R.Y
+- Y.A.G.N.I
+- Boy's Scout Rule
+
+---
+
+## Remember:
+
+### _"Always leave the code cleaner than you found it"_
+
+---
+
+## What to do next?
 
 ---
 
@@ -222,4 +576,6 @@ YAGNI PRINCIPLE
   
 ---
 
-# Thank You!
+# **Thank you!**
+
+#### *@lauragift_*
