@@ -12,7 +12,7 @@ build-lists: true
 
 ---
 
-✅ A good way to help develop your coding skills?
+✅ A good way to keep your code maintainable?
 
 ---
 
@@ -21,6 +21,12 @@ build-lists: true
 ---
 
 ### How do you classify _Bad Code?_
+
+---
+
+![inline](https://res.cloudinary.com/lauragift/image/upload/v1650297133/clean-code-image_sqeerl.png)
+
+Shh... Code Review In Progress!
 
 ---
 
@@ -54,7 +60,7 @@ _No one understands it except the person who wrote it._
 
 ![inline](https://res.cloudinary.com/lauragift/image/upload/v1650296868/IMG_1840.jpg_cbsffn.jpg)
 
-A true example of bad code.
+What bad code looks like.
 
 ---
 
@@ -63,14 +69,14 @@ A true example of bad code.
 [^⭐️]: Learn more about the [LeBlanc's Law](https://yiming.dev/clipping/2019/03/21/le-blanc's-law-a-k-a-later-equals-never/#:~:text=LeBlanc's%20Law%3A%20%22Later%20equals%20Never,fast%20you%20can%20deliver%20value.).
 
 ---
-
+<!-- 
 [.column]
 
 ![inline](https://res.cloudinary.com/lauragift/image/upload/v1650297019/FQjbylcacAIHFTH.jpeg_pszbor.jpg)
 
 [.column]
 
----
+--- -->
 
 ![inline]
 (https://res.cloudinary.com/lauragift/image/upload/v1650297031/1__otRqc1VYyfa2m3enVmsuQ.png_im85be.png)
@@ -93,9 +99,10 @@ _Code that anyone can read and understand other than the developer who wrote it.
 
 ---
 
-Clean code always looks like
+> Clean code always looks like it was written by
+> **someone who cares!**
 
-it was written by _someone who cares!_
+-- Michael Feathers
 
 ---
 
@@ -206,11 +213,13 @@ YAGNI PRINCIPLE
 
 ---
 
-## Resources
+# _Resources_
 
-- Clean Code Book
-- ..
-
+- [Clean Code Book - Robert Martin](https://www.oreilly.com/library/view/clean-code-a/9780136083238/)
+- [Code Complete - Steve McConnell](https://www.oreilly.com/library/view/code-complete-2nd/0735619670/)
+- [Introduction to Clean Code and Software Design Principles](https://workat.tech/machine-coding/tutorial/introduction-clean-code-software-design-principles-nwu4qqc63e09)
+- [Writing Clean Code for Humans - Cory House](https://www.pluralsight.com/courses/writing-clean-code-humans)
+  
 ---
 
 # Thank You!
