@@ -373,7 +373,7 @@ const client = new Shopify.Clients.Storefront(
 ```js
 /*
   @licstart 
-     Copyright (©) 2017 My[Company]Name
+     Copyright (©) 2022 CompanyName
      Available under the terms of the GNU/LGPL-3.0
      See LICENSE file for more informations.
   @licend 
