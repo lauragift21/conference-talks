@@ -7,7 +7,7 @@ presenter-notes: text-scale(.7), alignment(left), Futura
 
 [.footer: _Women Coding The Future - Online, April 2022_]
 
-^ Welcome Guest! I'm really excited to be speaking at this event about a topic I think is super important!
+^ Hello everyone! I'm really excited to be speaking at this event about a topic I think is super important!
 
 ---
 
@@ -24,13 +24,16 @@ presenter-notes: text-scale(.7), alignment(left), Futura
 
 ^ My talk today is all about writing clean code!
 
-^ If I was to through this question out to anyone in the audience, What will be your response?
+^ If we were in a room together, would have been nice to go through the room asking this question.
+I'll still throw it out there though, feel free to engage in chat. 
+
+^If I asked this question out to anyone in the audience, What will be your response?
 
 ---
 
 ✅ A good way to keep your code maintainable?
 
-^ Will it be because...
+^ Is it because...
 
 ---
 
