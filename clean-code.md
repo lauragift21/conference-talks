@@ -157,7 +157,7 @@ Messy code in a long term causes technical debt!
 
 ## What is _Clean Code?_
 
-^ What is even is clean code? There’s no one definition of clean code. 
+^ Before even going into that! What exactly is clean code? There’s no one definition of it. 
 
 ---
 
