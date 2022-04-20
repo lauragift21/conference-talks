@@ -53,6 +53,11 @@ Shh... Code Review In Progress!
 
 ^ Can anyone relate to this! This is the best depiction of good vs bad code I've seen.
 
+
+^ On the left, good code
+
+^ On the right, bad code
+
 ---
 
 ## What's wrong with this code?
@@ -298,13 +303,13 @@ function getCustomerAddress(customer) {
 
 ![inline](https://res.cloudinary.com/lauragift/image/upload/v1650297074/1_JokD47K7oc3WPCcY86dKww_rzlcgx.jpg)
 
----
-
-### ❌ BAD COMMENT EXAMPLES
-
 ^ Here’s what I think: Comments could be a helpful tool to use depending on how you use them.
 
 ^ There are good and bad ways of using code comments, I'll share some with you:
+
+---
+
+### ❌ BAD COMMENT EXAMPLES
 
 ---
 ### _Never Explain what the code is doing_
@@ -394,10 +399,10 @@ const client = new Shopify.Clients.Storefront(
 [.code-highlight: 1-6]
 ```js
 /**
- * Storefront POST API.
+ * Storefront POST API
  * @constructor
- * @param {string} req - The request object
- * @param {string} res - The response object
+ * @param {object} req - The request object
+ * @param {object} res - The response object
  */
 const storefrontAccessToken: string;
 const session = await Shopify.Utils.loadCurrentSession(req, res);
@@ -450,12 +455,14 @@ JS Standard Style, Airbnb Style Guide etc..
 const DAYS_IN_WEEK = 7;
 const daysInMonth = 30;
 
-function eraseDatabase() {}
-function restore_database() {}
+function getUserData() {}
+function delete_user_data() {}
 
-class animal {}
-class Alpaca {}
+class user {}
+class Account {}
 ```
+
+^ snake_case, camelCase, kebab-case, PascalCase
 
 ---
 
@@ -470,16 +477,20 @@ class Alpaca {}
 const DAYS_IN_WEEK = 7;
 const DAYS_IN_MONTH = 30;
 
-function eraseDatabase() {}
-function restoreDatabase() {}
+function getUserData() {}
+function deleteUserData() {}
 
-class Animal {}
-class Alpaca {}
+class User {}
+class Account {}
 ```
 
 ---
 
-## TDD _Principles_
+## Testing
+
+^ Why is writing test for your code so important?
+
+^ Testing your code help you ship error-free code into production, they also help you think of the implementation before writing the code for it.
 
 ---
 ## _LAWS OF TDD_
@@ -494,7 +505,7 @@ Good tests should follow the _FIRST principle:_
 
 F = Fast
 
-i = Independent
+i = Isolated
 
 R = Repeatable
 
@@ -504,7 +515,19 @@ T = Timely
 
 ---
 
+![inline](https://res.cloudinary.com/lauragift/image/upload/v1650430628/FIRST_hynzfe.jpg)
+
+The FIRST Principle
+
+---
+
 ## Error _Handling_
+
+^ We already know our code will likely fail, anything can go wrong, maybe you missed a trailing space or forgot to pass in the correct parameters. Things like this happen.
+
+^ But how do you ensure you handle it before your code gets to production?
+
+^ One way of doing this is by using try, catch exceptions, this makes your code look cleaner and you avoid all the uncessary if statements.
 
 ---
 
@@ -522,6 +545,9 @@ app.post('/webhooks', async (req, res) => {
   }
 });
 ```
+
+^ Don't ignore caught errors, do something with them!
+
 ---
 
 ### Good Code: _Error handling with try, catch expections_
@@ -541,9 +567,15 @@ app.post('/webhooks', async (req, res) => {
 });
 ```
 
+^ send the error to an error monitoring service
+
 ---
 
 # Clean Code _Principles_
+
+^ We've gone through some best practices, things you should look out for and how to keep your code clean.
+
+^ There's more to writing clean, I'll like to share some clean code priciples, these are concepts coined by great engineers and have stood the test of time!
 
 ---
 
@@ -558,6 +590,10 @@ app.post('/webhooks', async (req, res) => {
 ### D.R.Y
 
 ### _Don't Repeat Yourself_
+
+^ Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.
+
+^ To avoid DRY code, break your code down into smaller reusable code that can reuse anywhere.
 
 ---
 
@@ -638,6 +674,8 @@ YAGNI PRINCIPLE
 
 ## What to do next?
 
+^ Learning to write clean code is hard work! It’s not just about knowing the clean code principles and the different best practices, you also need a lot of practice to make it stick! So take what you’ve learned today and begin to slowly work it into your workflow.
+
 ---
 
 # _Resources_
@@ -646,6 +684,8 @@ YAGNI PRINCIPLE
 - [Code Complete - Steve McConnell](https://www.oreilly.com/library/view/code-complete-2nd/0735619670/)
 - [Introduction to Clean Code and Software Design Principles](https://workat.tech/machine-coding/tutorial/introduction-clean-code-software-design-principles-nwu4qqc63e09)
 - [Writing Clean Code for Humans - Cory House](https://www.pluralsight.com/courses/writing-clean-code-humans)
+
+^ Included a few references and resources for you to check out if you will like to learn more.
   
 ---
 
