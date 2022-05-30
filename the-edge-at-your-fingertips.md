@@ -132,7 +132,7 @@ close to your **users**.
 
 ## Advantages of Edge Functions
 - Reduced Latency
-- Reduced Cold Start
+- Zero Cold Start
 - Enhanced Security and Privacy
 - Added Functionality
 
@@ -143,7 +143,7 @@ close to your **users**.
 ---
 
 ## Limitations of Edge Functions
-- Data Loss / Data Storage 
+- Low Latency due to Data Storage 
   
 [.header: alignment(left), text-scale(1.0)]
 [.list: bullet-character(•), alignment(left)]
@@ -194,12 +194,18 @@ close to your **users**.
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
 
-### Data Storage on the Edge
+![INLINE 120%](images/twitter.png)
 
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
+
+---
+### Data Storage on the Edge
 
 [.footer: *@lauragift_*]
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
+
 
 ###  Workers KV
 
@@ -222,9 +228,37 @@ close to your **users**.
 ![fit](images/r2.png)
 
 ---
+### Example Use Cases
 
+- Real-time application with Durable Objects and Workers
+- A/B Testing
+- Custom HTTP Headers & Cookie Management
+- IOT / Gaming
+- User Authentication and Authourization
+- Geolocation Use cases
+- Compliance
+- Localization and Personalization
 
+[.header: alignment(left), text-scale(1.0)]
+[.list: bullet-character(•), alignment(left)]
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
+---
 
+### When **not** to use Cloudflare Workers
+
+- Real-time application with Durable Objects and Workers
+- A/B Testing
+
+[.header: alignment(left), text-scale(1.0)]
+[.list: bullet-character(•), alignment(left)]
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
+
+---
+## DEMO
+
+---
 ## What we've learned?
 
 - What is the Edge?
