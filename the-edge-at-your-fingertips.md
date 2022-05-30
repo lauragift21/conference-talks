@@ -247,25 +247,26 @@ close to your **users**.
 
 ### When **not** to use Cloudflare Workers
 
-- Real-time application with Durable Objects and Workers
-- A/B Testing
-
+- Databases Queries is not hosted...
+  
 [.header: alignment(left), text-scale(1.0)]
 [.list: bullet-character(•), alignment(left)]
 [.footer: *@lauragift_*]
 [.footer-style: alignment(right), text-scale(1.5)]
-
 ---
-## DEMO
 
+DEMO.
+
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
 ---
-## What we've learned?
+## What we've learned today?
 
 - What is the Edge?
 - How is it different from Serverless Functions?
 - Pros & Cons of Serverless & Edge functions.
-- The Cloudflare Developer Ecosystem.
-- Use Cases of Edge Functions.
+- The Cloudflare Developer Ecosystem (Workers, KV, R2, DO, D1).
+- Use Cases & Examples of Edge Functions.
 
 [.header: alignment(left), text-scale(1.0)]
 [.list: bullet-character(•), alignment(left)]
@@ -274,13 +275,27 @@ close to your **users**.
 
 ---
 
-Building applications on the **Edge** 
-brings us closers to the end-users, 
-improving **user experience** and 
+Building applications on the **Edge** brings us 
+closers to the end-users, improving 
+the **user's experience** and 
 making the web more **accessible**.
 
 [.footer: *@lauragift_*]
 [.footer-style: alignment(right), text-scale(1.5)]
+---
+![right 100%](./images/frame.png)
+## Further Resources
+
+- [Cloudflare Workers Documentation](https://developers.cloudflare.com/workers/)
+- [Cloudflare Pages Documentation](https://developers.cloudflare.com/pages/)
+- Cloudflare Blog - [blog.cloudflare.com](https://blog.cloudflare.com/)
+- [Cloudflare Devs Discord](https://discord.com/invite/cloudflaredev/)
+
+[.header: alignment(left), text-scale(1.0)]
+[.list: bullet-character(•), alignment(left)]
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
+
 ---
 # Thank you!
 
