@@ -84,16 +84,14 @@ close to your **users**.
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
 
-### Serverless Functions
+## Serverless Functions
 
 [.footer: *@lauragift_*]
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
 
-### Serverless Functions
+![](./images/serverless.png)
 
-[.footer: *@lauragift_*]
-[.footer-style: alignment(right), text-scale(1.5)]
 ---
 ## Advantages of Serverless Functions
 - Hosted by a provider, no need to manage your servers.
@@ -133,8 +131,7 @@ close to your **users**.
 ## Advantages of Edge Functions
 - Reduced Latency
 - Zero Cold Start
-- Enhanced Security and Privacy
-- Added Functionality
+- Improves Application Performace
 
 [.header: alignment(left), text-scale(1.0)]
 [.list: bullet-character(•), alignment(left)]
@@ -176,20 +173,53 @@ close to your **users**.
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
 
-#### Cloudflare Workers 
+#### ![inline 40%](images/workers.jpeg) Cloudflare Workers 
 ### How It Works?
 
-[.footer: *@lauragift_*]
-[.footer-style: alignment(right), text-scale(1.5)]
----
 
 
 [.footer: *@lauragift_*]
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
 
-### Cloudflare Pages Functions
+### ![inline 30%](images/pages.png) Pages Functions
 
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
+---
+
+**Pages Functions** enable you to run server-side code in your application to enable dynamic functionality without running a dedicated server. 
+
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
+---
+```js
+export async function onRequestPost(request) {
+  return new Response(`Hello world`);
+}
+```
+---
+## Functions Routing (Beta)
+
+[.code-highlight: none]
+[.code-highlight: 2-3]
+[.code-highlight: all]
+
+```bash
+├── ...
+├── functions
+|   └── api
+│       ├── [[path]].ts
+│       ├── [username]
+│       │   └── profile.ts
+│       ├── time.ts
+│       └── todos
+│           ├── [[path]].ts
+│           ├── [id].ts
+│           └── index.ts
+└── ...
+```
+[.code: auto(42), Font Family Name, line-height(1.5)]
 [.footer: *@lauragift_*]
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
@@ -255,13 +285,13 @@ close to your **users**.
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
 
-DEMO
+### **DEMO**
 
 [.footer: *@lauragift_*]
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
 
-## Geolocation Based Redirect
+## Geolocation Based Redirects
 
 [.code-highlight: none]
 [.code-highlight: 3]
@@ -285,7 +315,7 @@ export default {
 ---
 
 ![right fit autoplay mute](./images/geolocation.mov)
-## Geolocation Based Redirect
+## Geolocation Based Redirects
 
 ```js
 export default {
@@ -346,7 +376,9 @@ export default {
 ## A/B Testing Remote Origins
 
 [.code-highlight: none]
-[.code-highlight: 3]
+[.code-highlight: 4-5]
+[.code-highlight: 6]
+[.code-highlight: 7-11]
 [.code-highlight: all]
 
 ```js
@@ -365,6 +397,8 @@ export default {
   },
 };
 ```
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
 ---
 
 ![right fit autoplay mute](./images/ab.mov)
@@ -422,9 +456,6 @@ making the web more **accessible**.
 
 [.header: alignment(left), text-scale(1.0)]
 [.list: bullet-character(•), alignment(left)]
-[.footer: *@lauragift_*]
-[.footer-style: alignment(right), text-scale(1.5)]
-
 ---
 # Thank you!
 
