@@ -255,11 +255,140 @@ close to your **users**.
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
 
-DEMO.
+DEMO
 
 [.footer: *@lauragift_*]
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
+
+## Geolocation Based Redirect
+
+[.code-highlight: none]
+[.code-highlight: 3]
+[.code-highlight: 4-7]
+[.code-highlight: all]
+
+```js
+export default {
+  async fetch(request: Request): Promise<Response> {
+
+    const { cf } = request
+    if ( cf?.country === "NL") {
+      return Response.redirect("https://cloudflare.com")
+    }
+  },
+};
+```
+
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
+---
+
+![right fit autoplay mute](./images/geolocation.mov)
+## Geolocation Based Redirect
+
+```js
+export default {
+  async fetch(request: Request): Promise<Response> {
+    const { cf } = request
+    if ( cf?.country === "NL") {
+      return Response.redirect("https://cloudflare.com")
+    }
+  },
+};
+```
+---
+
+## Retry/Log Failed requests
+
+[.code-highlight: none]
+[.code-highlight: 3]
+[.code-highlight: all]
+
+```javascript
+export default {
+  async fetch(request: Request): Promise<Response> {
+    const res = await fetch("https://httpstat.us/503?sleep=2000")
+
+    if (!res.ok) {
+      return await fetch("https://httpstat.us/200")
+    } else {
+      return res
+    }
+  }
+}
+```
+
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
+---
+
+## Retry/Log Failed requests
+
+![right fit autoplay mute](./images/retry.mov)
+
+```javascript
+export default {
+  async fetch(request: Request): Promise<Response> {
+    const res = await fetch("https://httpstat.us/503?sleep=2000")
+
+    if (!res.ok) {
+      return await fetch("https://httpstat.us/200")
+    } else {
+      return res
+    }
+  }
+}
+
+```
+---
+
+## A/B Testing Remote Origins
+
+[.code-highlight: none]
+[.code-highlight: 3]
+[.code-highlight: all]
+
+```js
+export default {
+  async fetch(request: Request): Promise<Response> {
+
+    const origin1 = 'https://cloudflare.com';
+    const origin2 = 'https://jsworldconference.com';
+    const randomNumber = Math.floor(Math.random() * 100) + 1;
+
+    if (randomNumber > 50) {
+      return fetch(origin1);
+    } else {
+      return fetch(origin2);
+    }
+  },
+};
+```
+---
+
+![right fit autoplay mute](./images/ab.mov)
+
+## A/B Testing Remote Origins
+
+```js
+export default {
+  async fetch(request: Request): Promise<Response> {
+
+    const origin1 = 'https://cloudflare.com';
+    const origin2 = 'https://jsworldconference.com';
+    const randomNumber = Math.floor(Math.random() * 100) + 1;
+
+    if (randomNumber > 50) {
+      return fetch(origin1);
+    } else {
+      return fetch(origin2);
+    }
+  },
+};
+```
+---
+
 ## What we've learned today?
 
 - What is the Edge?
