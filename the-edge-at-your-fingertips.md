@@ -139,6 +139,12 @@ There's still a server, you just don't manage it.
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
 
+
+![inline 100%](./images/pop.png)
+
+## Region Earth
+---
+
 ## Advantages of Edge Functions
 - Reduced Latency
 - Zero Cold Start (0ms)
@@ -410,7 +416,7 @@ bucket_name = '<YOUR_BUCKET_NAME>'
 ---
 ### Common Use Cases
 
-- Geolocation
+- Geolocation Based Redirects
 - A/B Testing
 - Custom HTTP Headers & Cookie Management
 - User Authentication and Authourization
