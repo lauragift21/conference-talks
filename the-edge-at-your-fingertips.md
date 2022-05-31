@@ -1,12 +1,11 @@
-build-lists: true presenter-notes: text-scale(.7), alignment(left), Futura
+build-lists: true
 slide-transition: true
-
 
 ## [fit] The __EDGE__ at your Fingertips,
 ## Literally!
 
 [.footer: _JSWorld Conference - Amsterdam, June 2022_]
-[.footer-style: #2F2F2F, alignment(center), text-scale(1.5)]
+[.footer-style: alignment(center), text-scale(1.7)]
 ---
 ## What we'll cover?
 
@@ -73,10 +72,9 @@ close to your **users**.
 ---
 # Limitations of Traditional Servers
 
-- Host your own server.
-- High latency.
-- Limited opportunity for scaling.
 - Expensive to maintain.
+- High latency due to large amount of traffic.
+- Limited opportunity for scaling.
   
 [.header: alignment(left), text-scale(1.0)]
 [.list: bullet-character(•), alignment(left)]
@@ -90,9 +88,22 @@ close to your **users**.
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
 
-![](./images/serverless.png)
+Serverless doesn't mean **no servers!**
 
+There's still a server, you just don't manage it.
+
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
 ---
+
+## Serverless Providers
+
+![inline 40%](images/cloud.png)
+
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
+---
+
 ## Advantages of Serverless Functions
 - Hosted by a provider, no need to manage your servers.
 - Low Costs of Bandwidth.
@@ -106,7 +117,7 @@ close to your **users**.
 ## Limitation of Serverless Functions
 - All functions are stored in a  centralized core location (us-east1).
 - Cold starts after the function is idle. 
-- Debugging and Testing is challenging.
+- Limited compute resources(CPU, memory).
   
 [.header: alignment(left), text-scale(1.0)]
 [.list: bullet-character(•), alignment(left)]
@@ -140,8 +151,11 @@ close to your **users**.
 ---
 
 ## Limitations of Edge Functions
-- Low Latency due to Data Storage 
-  
+
+- Limited compute resources.
+- No wide support for Browser & Node specific features.
+- Low Latency due to Data Storage.
+
 [.header: alignment(left), text-scale(1.0)]
 [.list: bullet-character(•), alignment(left)]
 [.footer: *@lauragift_*]
@@ -400,7 +414,7 @@ bucket_name = '<YOUR_BUCKET_NAME>'
 ![fit](images/d1.png)
 
 ---
-### Example Use Cases
+### Common Use Cases
 
 - Real-time application with Durable Objects and Workers
 - A/B Testing
@@ -417,18 +431,21 @@ bucket_name = '<YOUR_BUCKET_NAME>'
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
 
-### When **not** to use Cloudflare Workers
+### When **~~not~~** to use Cloudflare Workers
 
-![inline fit](add gif about using it everytime)
+---
+
+![inline fit](./images/giphy.gif)
   
 [.footer: *@lauragift_*]
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
 
-### When **not** to use Cloudflare Workers
+### Use Cases ~~wont recommend~~
 
-- Database is not hosted on the Edge!
-- More ???
+- Stateful App / Database is not hosted on the Edge!
+- Requires a lot of compute resources to run.
+- ?
 
 [.list: bullet-character(•), alignment(center)]
 [.footer: *@lauragift_*]
@@ -588,11 +605,12 @@ export default {
 
 ---
 
-Building applications on the **Edge** brings us 
-closers to the end-users, improving 
-the **user's experience** and 
-making the web more **accessible**.
+Building applications on the **_Edge_** helps bring 
+us close to our end-users, improving 
+their **_experience_** and making 
+the web more **_accessible_ to everyone**.
 
+[.text: text-scale(1.4)]
 [.footer: *@lauragift_*]
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
