@@ -106,7 +106,7 @@ There's still a server, you just don't manage it.
 
 ## Advantages of Serverless Functions
 - Hosted by a provider, no need to manage your servers.
-- Low Costs of Bandwidth.
+- Low costs of bandwidth (pay for only what you use).
 - Scalibility On Demand.
 
 [.header: alignment(left), text-scale(1.0)]
@@ -199,7 +199,10 @@ The best packages and libraries supported by Cloudflare Workers.
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
 
-Cloudflare Workers provides a serverless execution environment that allows you to create entirely new applications or augment existing ones without configuring or maintaining infrastructure.
+Cloudflare Workers is a serverless execution environment 
+that allows you to create new applications 
+or augment existing ones 
+without configuring or maintaining infrastructure.
 
 ---
 
@@ -395,7 +398,10 @@ export class DurableObject {
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
 
-R2 storage allows developers to store large amounts of unstructured data without the costly egress bandwidth fees associated with typical cloud storage services.
+R2 storage allows developers to store 
+large amounts of **unstructured data** without the 
+costly **egress bandwidth fees** associated 
+with typical cloud storage services.
 
 [.footer: *@lauragift_*]
 [.footer-style: alignment(right), text-scale(1.5)]
