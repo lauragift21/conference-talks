@@ -161,10 +161,38 @@ close to your **users**.
 [.footer: *@lauragift_*]
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
-## 
+
+**Cloudflare Workers** provides a serverless execution environment that allows you to create entirely new applications or augment existing ones without configuring or maintaining infrastructure.
+
+---
 
 - Goodbye to cold starts—support for **0ms** worldwide.
+  
+[.header: alignment(left), text-scale(1.0)]
+[.list: bullet-character(•), alignment(left)]
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
+---
+
+How is a zero cold start possible?
+
+![inline fit](images/workers-handshake.png)
+
+---
+
+How is a zero cold start possible?
+
+![inline fit](images/layer.png)
+
+---
 - Cost Savings - **100,000** request/daily free & affordable plans to scale.
+  
+[.header: alignment(left), text-scale(1.0)]
+[.list: bullet-character(•), alignment(left)]
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
+---
+
 - Edge Storage with KV, Durable Object, R2 & D1.
   
 [.header: alignment(left), text-scale(1.0)]
@@ -176,10 +204,17 @@ close to your **users**.
 #### ![inline 40%](images/workers.jpeg) Cloudflare Workers 
 ### How It Works?
 
-
-
 [.footer: *@lauragift_*]
 [.footer-style: alignment(right), text-scale(1.5)]
+---
+
+## V8 ENGINE
+
+![inline 70%](images/isolates.png)
+
+[.header: #222, line-height(8)]
+[.background-color: #FFF]
+
 ---
 
 ### ![inline 30%](images/pages.png) Pages Functions
@@ -224,18 +259,19 @@ export async function onRequestPost(request) {
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
 
-![INLINE 120%](images/twitter.png)
-
-[.footer: *@lauragift_*]
-[.footer-style: alignment(right), text-scale(1.5)]
-
----
+![](images/data.jpeg)
 ### Data Storage on the Edge
 
 [.footer: *@lauragift_*]
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
 
+![INLINE 120%](images/twitter.png)
+
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
+
+---
 
 ###  Workers KV
 
