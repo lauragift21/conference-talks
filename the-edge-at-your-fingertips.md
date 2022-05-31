@@ -1,7 +1,7 @@
 build-lists: true
 slide-transition: true
 
-## [fit] The __EDGE__ at your Fingertips,
+## [fit] The **__EDGE__** at your Fingertips,
 ## Literally!
 
 [.footer: _JSWorld Conference - Amsterdam, June 2022_]
@@ -410,13 +410,10 @@ bucket_name = '<YOUR_BUCKET_NAME>'
 ---
 ### Common Use Cases
 
-- Real-time application with Durable Objects and Workers
+- Geolocation
 - A/B Testing
 - Custom HTTP Headers & Cookie Management
-- IOT/Gaming
 - User Authentication and Authourization
-- Geolocation Use cases
-- Compliance
 - Localization and Personalization
 
 [.header: alignment(left), text-scale(1.0)]
