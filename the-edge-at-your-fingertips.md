@@ -168,8 +168,6 @@ close to your **users**.
 
 - Goodbye to cold starts—support for **0ms** worldwide.
   
-[.header: alignment(left), text-scale(1.0)]
-[.list: bullet-character(•), alignment(left)]
 [.footer: *@lauragift_*]
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
@@ -187,16 +185,12 @@ How is a zero cold start possible?
 ---
 - Cost Savings - **100,000** request/daily free & affordable plans to scale.
   
-[.header: alignment(left), text-scale(1.0)]
-[.list: bullet-character(•), alignment(left)]
 [.footer: *@lauragift_*]
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
 
 - Edge Storage with KV, Durable Object, R2 & D1.
-  
-[.header: alignment(left), text-scale(1.0)]
-[.list: bullet-character(•), alignment(left)]
+
 [.footer: *@lauragift_*]
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
@@ -208,13 +202,43 @@ How is a zero cold start possible?
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
 
-## V8 ENGINE
+- V8 Isolates Engine
+
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
+---
 
 ![inline 70%](images/isolates.png)
 
 [.header: #222, line-height(8)]
 [.background-color: #FFF]
 
+---
+
+- Computer per Request
+  
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
+---
+
+## Worker Example
+
+```js
+export default {
+  fetch() {
+    return new Response('Hello world');
+  },
+};
+```
+[.header: alignment(left)]
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
+---
+
+- Distrubuted Execution
+  
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
 ---
 
 ### ![inline 30%](images/pages.png) Pages Functions
@@ -233,6 +257,8 @@ export async function onRequestPost(request) {
   return new Response(`Hello world`);
 }
 ```
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
 ---
 ## Functions Routing (Beta)
 
@@ -279,7 +305,71 @@ export async function onRequestPost(request) {
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
 
+Workers KV is a global, low-latency, key-value data store.
+
+---
+
+```js
+await NAMESPACE.put(key, value);
+```
+
+[.code: alignment(center)]
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
+---
+
+
+```js
+await NAMESPACE.get(key);
+```
+
+[.code: alignment(center)]
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
+---
+
+
+```js
+await NAMESPACE.delete(key);
+```
+
+[.code: alignment(center)]
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
+---
+
+
+```js
+await NAMESPACE.list();
+```
+
+[.code: alignment(center)]
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
+---
+
 ### Durable Objects
+
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
+---
+
+**Durable Objects** provide **low-latency** coordination and consistent storage for the Workers platform through two features -
+**global uniqueness and a transactional storage API.**
+
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
+---
+
+```js
+export class DurableObject {
+  constructor(state, env) {}
+
+  async fetch(request) {
+    return Response("Hello World")
+  }
+}
+```
 
 [.footer: *@lauragift_*]
 [.footer-style: alignment(right), text-scale(1.5)]
@@ -291,7 +381,23 @@ export async function onRequestPost(request) {
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
 
-![fit](images/r2.png)
+R2 storage allows developers to store large amounts of unstructured data without the costly egress bandwidth fees associated with typical cloud storage services.
+
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
+---
+##  R2 Bindings
+```toml
+# wrangler.toml
+[[r2_buckets]]
+binding = 'MY_BUCKET' # <~ valid JavaScript variable name
+bucket_name = '<YOUR_BUCKET_NAME>'
+```
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
+---
+
+![fit](images/d1.png)
 
 ---
 ### Example Use Cases
@@ -299,7 +405,7 @@ export async function onRequestPost(request) {
 - Real-time application with Durable Objects and Workers
 - A/B Testing
 - Custom HTTP Headers & Cookie Management
-- IOT / Gaming
+- IOT/Gaming
 - User Authentication and Authourization
 - Geolocation Use cases
 - Compliance
@@ -313,15 +419,23 @@ export async function onRequestPost(request) {
 
 ### When **not** to use Cloudflare Workers
 
-- Databases Queries is not hosted...
+![inline fit](add gif about using it everytime)
   
-[.header: alignment(left), text-scale(1.0)]
-[.list: bullet-character(•), alignment(left)]
 [.footer: *@lauragift_*]
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
 
-### **DEMO**
+### When **not** to use Cloudflare Workers
+
+- Database is not hosted on the Edge!
+- More ???
+
+[.list: bullet-character(•), alignment(center)]
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
+---
+
+### **Workers Examples**
 
 [.footer: *@lauragift_*]
 [.footer-style: alignment(right), text-scale(1.5)]
