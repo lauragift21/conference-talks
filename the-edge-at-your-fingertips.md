@@ -141,8 +141,8 @@ There's still a server, you just don't manage it.
 
 ## Advantages of Edge Functions
 - Reduced Latency
-- Zero Cold Start
-- Improves Application Performace
+- Zero Cold Start (0ms)
+- Improved Application Performace
 
 [.header: alignment(left), text-scale(1.0)]
 [.list: bullet-character(•), alignment(left)]
@@ -152,9 +152,9 @@ There's still a server, you just don't manage it.
 
 ## Limitations of Edge Functions
 
-- Limited compute resources.
-- No wide support for Browser & Node specific features.
-- Low Latency due to Data Storage.
+- Limited compute resources **(~10 ms)**.
+- No support for browser or Node.js specific features(V8 Engine).
+- Low latency due to data storage.
 
 [.header: alignment(left), text-scale(1.0)]
 [.list: bullet-character(•), alignment(left)]
@@ -261,42 +261,31 @@ export default {
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
 
-**Pages Functions** enable you to run server-side code in your application to enable dynamic functionality without running a dedicated server. 
+**Pages** _enable you build full-stack applications by executing code on the_ **Cloudflare network** _with help from_ **Cloudflare Workers**.
 
 [.footer: *@lauragift_*]
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
+
+##  Functions (Beta)
 ```js
-export async function onRequestPost(request) {
-  return new Response(`Hello world`);
+export async function onRequest(context) {
+  // Contents of context object
+  const {
+    request, // same as existing Worker API
+    env, // same as existing Worker API
+    params, // if filename includes [id] or [[path]]
+    waitUntil, // same as ctx.waitUntil in existing Worker API
+    next, // used for middleware or to fetch assets
+    data, // arbitrary space for passing data between middlewares
+  } = context;
+
+  return new Response("Hello, world!");
 }
 ```
 [.footer: *@lauragift_*]
 [.footer-style: alignment(right), text-scale(1.5)]
----
-## Functions Routing (Beta)
 
-[.code-highlight: none]
-[.code-highlight: 2-3]
-[.code-highlight: all]
-
-```bash
-├── ...
-├── functions
-|   └── api
-│       ├── [[path]].ts
-│       ├── [username]
-│       │   └── profile.ts
-│       ├── time.ts
-│       └── todos
-│           ├── [[path]].ts
-│           ├── [id].ts
-│           └── index.ts
-└── ...
-```
-[.code: auto(42), Font Family Name, line-height(1.5)]
-[.footer: *@lauragift_*]
-[.footer-style: alignment(right), text-scale(1.5)]
 ---
 
 ![](images/data.jpeg)
@@ -443,9 +432,18 @@ bucket_name = '<YOUR_BUCKET_NAME>'
 
 ### Use Cases ~~wont recommend~~
 
-- Stateful App / Database is not hosted on the Edge!
-- Requires a lot of compute resources to run.
-- ?
+Multiple Read requests & 
+your Database is not hosted on the Edge!
+
+[.list: bullet-character(•), alignment(center)]
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
+---
+### Use Cases ~~wont recommend~~
+
+Requires a lot of compute resources to run.
+
+![inline](./images/limits.png)
 
 [.list: bullet-character(•), alignment(center)]
 [.footer: *@lauragift_*]
