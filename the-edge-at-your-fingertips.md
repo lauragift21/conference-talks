@@ -178,7 +178,7 @@ The best packages and libraries supported by Cloudflare Workers.
 
 ---
 
-- Low latency due to data storage.
+- High latency due to data storage limitations.
 
 [.list: bullet-character(•), alignment(center)]
 [.footer: *@lauragift_*]
@@ -199,7 +199,7 @@ The best packages and libraries supported by Cloudflare Workers.
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
 
-**Cloudflare Workers** provides a serverless execution environment that allows you to create entirely new applications or augment existing ones without configuring or maintaining infrastructure.
+Cloudflare Workers provides a serverless execution environment that allows you to create entirely new applications or augment existing ones without configuring or maintaining infrastructure.
 
 ---
 
@@ -272,7 +272,7 @@ export default {
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
 
-**Pages** _enable you build full-stack applications by executing code on the_ **Cloudflare network** _with help from_ **Cloudflare Workers**.
+**Pages** enable you build full-stack applications by executing code on the Cloudflare network with help from **Cloudflare Workers**.
 
 [.footer: *@lauragift_*]
 [.footer-style: alignment(right), text-scale(1.5)]
@@ -440,8 +440,7 @@ bucket_name = '<YOUR_BUCKET_NAME>'
 
 ### Use Cases ~~wont recommend~~
 
-Multiple Read requests & 
-your Database is not hosted on the Edge!
+Data Latency - Database is not hosted on the Edge!
 
 [.list: bullet-character(•), alignment(center)]
 [.footer: *@lauragift_*]
@@ -449,7 +448,7 @@ your Database is not hosted on the Edge!
 ---
 ### Use Cases ~~wont recommend~~
 
-Requires a lot of compute resources to run.
+Requires large amount of compute resources to run.
 
 ![inline](./images/limits.png)
 
