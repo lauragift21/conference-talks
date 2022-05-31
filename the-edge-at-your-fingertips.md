@@ -150,14 +150,31 @@ There's still a server, you just don't manage it.
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
 
-## Limitations of Edge Functions
+### Limitations of Edge Functions
+---
 
 - Limited compute resources **(~10 ms)**.
+
+[.list: bullet-character(•), alignment(center)]
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
+---
 - No support for browser or Node.js specific features(V8 Engine).
+
+[.list: bullet-character(•), alignment(center)]
+[.footer: *@lauragift_*]
+[.footer-style: alignment(right), text-scale(1.5)]
+---
+
+![inline fill](images/packages.png)
+
+The best packages and libraries supported by Cloudflare Workers.
+
+---
+
 - Low latency due to data storage.
 
-[.header: alignment(left), text-scale(1.0)]
-[.list: bullet-character(•), alignment(left)]
+[.list: bullet-character(•), alignment(center)]
 [.footer: *@lauragift_*]
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
@@ -229,28 +246,16 @@ How is a zero cold start possible?
 
 ---
 
-- Computer per Request
-  
-[.footer: *@lauragift_*]
-[.footer-style: alignment(right), text-scale(1.5)]
----
-
-## Worker Example
+## Hello Worker Example
 
 ```js
 export default {
   fetch() {
-    return new Response('Hello world');
+    return new Response('Hello Worker!');
   },
 };
 ```
 [.header: alignment(left)]
-[.footer: *@lauragift_*]
-[.footer-style: alignment(right), text-scale(1.5)]
----
-
-- Distrubuted Execution
-  
 [.footer: *@lauragift_*]
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
