@@ -184,6 +184,11 @@ Netlify Edge Functions
 The best packages and libraries supported by Cloudflare Workers.
 
 ---
+![fit](./images/wintercg.png)
+![fit](./images/wintercgg.png)
+
+
+---
 
 - High latency due to data storage limitations.
 
