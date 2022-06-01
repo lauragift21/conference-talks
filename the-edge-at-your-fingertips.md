@@ -116,8 +116,8 @@ There's still a server, you just don't manage it.
 ---
 ## Limitation of Serverless Functions
 - All functions are stored in a  centralized core location (us-east1).
-- Cold starts after the function is idle. 
-- Limited compute resources(CPU, memory).
+- Cold start after the function is idle. 
+- Limited execution time(10ms).
   
 [.header: alignment(left), text-scale(1.0)]
 [.list: bullet-character(•), alignment(left)]
@@ -186,7 +186,6 @@ The best packages and libraries supported by Cloudflare Workers.
 ---
 ![fit](./images/wintercg.png)
 ![fit](./images/wintercgg.png)
-
 
 ---
 
@@ -265,6 +264,16 @@ How is a zero cold start possible?
 [.header: #222, line-height(8)]
 [.background-color: #FFF]
 
+---
+
+| Virtual Machines | V8 Isolates |
+| --- | --- | --- |
+| A virtual machine (VM) is a software-based computer that exists within another computer’s operating system. | Isolates are lightweight contexts that group variables with the code allowed to mutate them.| 
+| Consumes more memory. | Consumes less memory.  |
+| Start-up time 500ms- 10secs. | Start-up time under 5ms. |
+
+[.table-separator: #000000, stroke-width(10)] 
+[.text: text-scale(0.7)]
 ---
 
 ## Hello Worker Example
