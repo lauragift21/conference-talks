@@ -399,6 +399,17 @@ await NAMESPACE.list();
 [.footer-style: alignment(right), text-scale(1.5)]
 ---
 
+### Stateful Data on the Edge
+
+---
+
+![inline](images/chat.png)
+
+
+Chat Demo using Durable Objects
+
+---
+
 ```js
 export class DurableObject {
   constructor(state, env) {}
