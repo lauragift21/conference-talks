@@ -144,6 +144,10 @@ There's still a server, you just don't manage it.
 
 ## Region Earth
 ---
+### Edge Providers
+Cloudflare Workers, AWS Lambda@Edge, Deno Deploy, Netlify Edge Functions
+
+---
 
 ## Advantages of Edge Functions
 - Reduced Latency
