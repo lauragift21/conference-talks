@@ -482,7 +482,7 @@ export default {
 
     const { cf } = request
     if ( cf?.country === "NL") {
-      return Response.redirect("https://cloudflare.com")
+      return Response.redirect("https://asos.com/nl")
     }
   },
 };
